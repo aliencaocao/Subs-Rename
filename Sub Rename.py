@@ -22,8 +22,8 @@ SubFormats = {'srt': 'SubRip',
 files = os.listdir()
 videoFiles = [f for f in files if f.split('.')[-1].lower() in VidFormats]
 subFiles = [f for f in files if f.split('.')[-1].lower() in SubFormats]
-VideoFileNames = [f.split('.')[0] for f in videoFiles]
-SubFileNames = [f.split('.')[0] for f in subFiles]
+VideoFileNames = ['.'.join(f.split('.')[:-1]) for f in videoFiles]
+SubFileNames = ['.'.join(f.split('.')[:-1]) for f in subFiles]
 videoFileFormat = videoFiles[0].split('.')[-1]
 subFileFormat = subFiles[0].split('.')[-1]
 
